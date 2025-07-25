@@ -1,6 +1,6 @@
 # 🧠 Train and Package Your Model Using Allora MDK
 
-This guide walks you through setting up the [Allora Model Development Kit (MDK)](https://github.com/allora-network/allora-model-maker), training your custom model, and packaging it for use within the Allora Network.
+This guide walks you through setting up the [Allora Model Development Kit (MDK)](https://github.com/allora-network/allora-model-maker), training your custom model and packaging it for use within the Allora Network.
 
 ---
 
