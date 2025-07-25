@@ -18,13 +18,13 @@ This repository helps you set up, train, and package your machine learning model
 ```bash
 git clone https://github.com/Gifty7/MDK-Allora.git
 cd MDK-Allora
-⚙️ System Update
+## ⚙️ System Update
 bash
 Copy
 Edit
 sudo apt update
 sudo apt upgrade -y
-🛠️ Install Go
+## 🛠️ Install Go
 bash
 Copy
 Edit
@@ -32,13 +32,13 @@ curl -OL https://go.dev/dl/go1.22.4.linux-amd64.tar.gz
 tar -C /usr/local -xvf go1.22.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
-🧰 Setup Allora Model Maker
+## 🧰 Setup Allora Model Maker
 bash
 Copy
 Edit
 git clone https://github.com/allora-network/allora-model-maker.git
 cd allora-model-maker
-🔐 Add Tiingo API Key
+## 🔐 Add Tiingo API Key
 Create an account at Tiingo
 
 Copy your API key
@@ -57,7 +57,7 @@ Edit
 TIINGO_API_KEY=your_api_key_here
 Save and close (Ctrl + X, then Y, then Enter)
 
-🧬 Setup Conda & Install Dependencies
+## 🧬 Setup Conda & Install Dependencies
 bash
 Copy
 Edit
@@ -80,7 +80,7 @@ bash
 Copy
 Edit
 python --version
-🧪 Install Python Packages
+## 🧪 Install Python Packages
 bash
 Copy
 Edit
@@ -98,7 +98,7 @@ bash
 Copy
 Edit
 pip install -r requirements.txt
-🧠 Train Your Model
+## 🧠 Train Your Model
 Place your model.py inside the model/ directory.
 
 Modify it according to your dataset and training logic.
@@ -122,7 +122,7 @@ Edit
 1
 If results are not good, adjust the model and retrain.
 
-📦 Package Your Model
+## 📦 Package Your Model
 bash
 Copy
 Edit
