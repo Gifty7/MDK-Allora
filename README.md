@@ -1,6 +1,6 @@
-# 📦 Train and Package Your Model Using Allora MDK
+# 🧠 Train and Package Your Model Using Allora MDK
 
-This repository helps you set up, train, and package your machine learning model using the **Allora Model Development Kit (MDK)**. Includes setup for Go, Conda, and integration with Tiingo API for financial data.
+This guide walks you through setting up the [Allora Model Development Kit (MDK)](https://github.com/allora-network/allora-model-maker), training your custom model, and packaging it for use within the Allora Network.
 
 ---
 
@@ -9,125 +9,97 @@ This repository helps you set up, train, and package your machine learning model
 - Ubuntu 20.04 or later
 - Python 3.11
 - Go 1.22+
-- Tiingo API Key
+- Tiingo API Key (Get it [here](https://www.tiingo.com/account/api/token))
 
 ---
 
-## 🚀 Quick Start
+## ⚙️ System Setup
 
-```bash
-git clone https://github.com/Gifty7/MDK-Allora.git
-cd MDK-Allora
-## ⚙️ System Update
-bash
-Copy
-Edit
+
+# Train and Package your Model using Allora MDK
+
+```
 sudo apt update
 sudo apt upgrade -y
-## 🛠️ Install Go
-bash
-Copy
-Edit
+```
+
+### Install Go
+
+```
 curl -OL https://go.dev/dl/go1.22.4.linux-amd64.tar.gz
+```
+```
 tar -C /usr/local -xvf go1.22.4.linux-amd64.tar.gz
+```
+```
 export PATH=$PATH:/usr/local/go/bin
+```
+```
 go version
-## 🧰 Setup Allora Model Maker
-bash
-Copy
-Edit
+```
+
+### setup model maker
+
+```
 git clone https://github.com/allora-network/allora-model-maker.git
 cd allora-model-maker
-## 🔐 Add Tiingo API Key
-Create an account at Tiingo
-
-Copy your API key
-
-Create a .env file:
-
-bash
-Copy
-Edit
+```
+Create account at https://www.tiingo.com/account/api/token and paste the key to .env file
+```
 nano .env
-Paste this:
-
-env
-Copy
-Edit
+```
+```
 TIINGO_API_KEY=your_api_key_here
-Save and close (Ctrl + X, then Y, then Enter)
+```
 
-## 🧬 Setup Conda & Install Dependencies
-bash
-Copy
-Edit
+### Setting up Conda and install dependencies
+
+```
 mkdir -p ~/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
 bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
 rm ~/miniconda3/miniconda.sh
+```
+```
 export PATH="/root/miniconda3/bin:$PATH"
-Create and activate the environment:
-
-bash
-Copy
-Edit
-conda create --name modelmaker python=3.11 -y
+```
+```
+conda create --name modelmaker python=3.11
+```
+```
 source activate base
 conda activate modelmaker
-Check Python version:
-
-bash
-Copy
-Edit
+```
+python version should be 3.11.
+```
 python --version
-## 🧪 Install Python Packages
-bash
-Copy
-Edit
+```
+```
 pip install setuptools==72.1.0 Cython==3.0.11 numpy==1.24.3 pystan
+```
+```
 nano requirements.txt
-Remove this line:
-
-text
-Copy
-Edit
-pystan==2.19.1.1
-Then:
-
-bash
-Copy
-Edit
+```
+remove entry for pystan==2.19.1.1. Save file ctrl+x then y
+```
 pip install -r requirements.txt
-## 🧠 Train Your Model
-Place your model.py inside the model/ directory.
+```
 
-Modify it according to your dataset and training logic.
+# Train model
 
-Run training:
+model.py placed inside model directory for each type of models. modify your model.py as per requirement on which your model will be trained
 
-bash
-Copy
-Edit
+
+```
 make train
-Evaluate your model:
+```
 
-bash
-Copy
-Edit
+
+```
 make eval
-When prompted, choose:
-
-Copy
-Edit
-1
-If results are not good, adjust the model and retrain.
-
-## 📦 Package Your Model
-bash
-Copy
-Edit
+```
+select: 1
+If your result is not good you can train a different model
+```
 make package-<model-name>
-Replace <model-name> with your folder name, e.g., make package-btc-predictor
-
-✅ You're Done!
-Your model is now trained and packaged, ready to plug into the Allora Network's decentralized intelligence layer.
+```
