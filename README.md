@@ -70,7 +70,7 @@ pip install -r requirements.txt
 # Train model
 
 model.py placed inside model directory for each type of models. modify your model.py as per requirement on which your model will be trained
-![image](https://github.com/user-attachments/assets/73b0e112-06d6-497f-8430-efa66d5b2c70)
+
 
 ```
 make train
