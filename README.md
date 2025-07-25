@@ -103,3 +103,5 @@ If your result is not good you can train a different model
 ```
 make package-<model-name>
 ```
+# ✅ You're Done!
+Your model is now trained and packaged, ready to plug into the Allora Network's decentralized intelligence layer.
